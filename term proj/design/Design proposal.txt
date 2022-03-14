@@ -1,0 +1,93 @@
+﻿Design proposal
+
+
+Project Proposal 
+
+1. Project Description
+Project Title: Pixelshop (updated)
+
+
+This project is a photo editing application called Rollergram. In my project, I would like to incorporate photo filters into the built-in camera to create different effects on the photo. Open-CV will be used to access the camera, in order to take photos and record videos. To mimic the functionality of vintage film cameras, the users have to take one set of photos until they see the result. The resulting photos will be presented in a photo library where the different sets of photos taken at different timings will be stored, and users may make other adjustments to the photos from there, the features include brightness, contrast, saturation, inversion, and blurring. The effects can be superposed. Users may save the photos after adjustment into the local library. The application should be aesthetic and interactive.
+
+
+
+
+2. Competitive Analysis 
+Rollergram is a film camera application with photo-editing features for an additional touch-up.
+
+
+I got my inspiration from the iPhone app EE 35 Film. (https://apps.apple.com/us/app/ee35-film-camera/id1313164055 )This is a camera app made in Japan that stimulates a retro mechanical camera around the 1960s. Its main usage is simply pressing a shutter. Two built-in filters are installed - color and Black and white. After taking 12 photos, a roll of film will be directly saved to the user’s photo library. However, the users cannot adjust their photos in the application, and they have to use other editing softwares to fulfill their requirements if the filter is not as desirable.
+
+
+After searching through the 112 project library, one project caught my interest. (https://www.youtube.com/watch?v=4ZWqAcqtjkc&feature=youtu.be). FilterLab is an app to customize photos and videos with sliders implemented for the user interface. The effects can be stacked on top of each other. My project will also adopt this approach and combine the effects with a photo-taking feature.
+
+
+
+
+
+
+3. Structural Plan 
+The final design will be grouped into four parts: 1. Photo-taking camera, 2. Video-taking camera, 3. Photo Library, 4. Photo-editing page
+
+
+For the two cameras, retro-effect filters can be selected to apply to the photos or videos. 
+
+
+In the photo library, ‘rolls of films’ will be stored, where users can select and access the photos inside each roll.
+
+
+After selecting the photo, the last feature will be the photo-editing page. Users can apply different effects on the photo/video. The effects include brightness, contrast, saturation, inversion, and blurring. Users can save the photos after making the adjustment.
+
+
+
+
+4. Algorithmic Plan
+One challenge regarding the algorithmic complexity is that I’ll write my own photo editing functions to use in the camera, this can be done by accessing the individual image bands from an image, after getting the pixel RGB values or HSV values of the image, the values can be changed accordingly to achieve the desired effect. In the photo-editing page, the filters will be incorporated with a slider using Tkinter, such that the users can customize their photos.
+
+
+Another challenge is to write my own filter functions and incorporate them into the camera. In the camera, these filters will be applied using the ‘overlay’ method, where the color of the desired intensity will be applied to the camera frame, and users can take photos of this filtered effect. This would require OpenCV and Python Image Library.
+
+
+5. Timeline Plan
+
+
+Nov 23 TP0: finish a rough plan of the project
+Nov 30 TP1: a working camera for photo and video taking, write functions for some basic effects (negative photo, brightness, contrast)
+Dec 3: set up a working photo library in the application after photos/videos are taken, incorporate user interface (sliders, buttons) with the functions
+Dec 5: finish up the functions of harder effects(blur, hue adjustment), ensure that the effects can be stacked on top of each other
+Dec 7: embellish the application with icons, background images, and buttons for the user interface
+Dec 9: TP2 achieve a working application for MVP
+
+
+6. Version Control Plan
+Google Drive is used to backup and save each version of the deliverables and some separate functions.   
+
+
+7. Module List
+Open CV will be used for this project.
+
+
+
+
+________________
+
+
+TP2 Update
+
+
+Due to issues with integrating OpenCV into 112 graphics, the OpenCV part of the project will be removed. 
+
+
+The focal point of this project will be changed to focus on the photo-editing part and PIL will only be used to extract the pixel values of the image for the functions of the filters and the changeable effects.
+
+
+More effects are added to increase the complexity: temperature, tint, hue, sharpen, and sepia. The filters can be toggled to cancel the effect.
+
+
+Users can upload their photos and edit them with this application, using built-in filters like B&W, sharpen, blur, sepia, and the effects like brightness, contrast, saturation, hue, temperature, and tint.
+________________
+TP3 Update
+The two built-in filters ‘Rose’ and ‘Oak’ are of different properties. ‘Rose’ is an orange and pink tone, a warm filter that creates vibrant color tones in images. ‘Oak’ is a cool tone, moody kind of filter that works well especially with nature and landscape photographs.
+
+
+New features of drawing and erasing on the image are included. First, the user can select a color using the color dropper. They can then draw and erase on the image. After drawing on the image, the finalized product can be saved by pressing the save button.
